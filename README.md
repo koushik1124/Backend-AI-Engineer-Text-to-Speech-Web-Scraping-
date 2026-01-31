@@ -60,12 +60,14 @@ Designed to demonstrate real-world GenAI backend engineering practices.
 ### 🌐 Target Website (Scraping Source)
 
   - For evaluation, the pipeline was tested against:
+
   - https://quotes.toscrape.com/
   - Although this is a demo site, it behaves like a product listing:
   - Repeated content blocks
   - Public HTML
   - Multiple items per page
   - Each quote is treated as a “product item”.
+
 
 **The architecture is site-agnostic — replacing this URL requires no scraper logic changes**.
 
