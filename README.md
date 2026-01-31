@@ -1,6 +1,6 @@
-🎧 AI Product Audio Summarizer — Production-Grade Semantic Scraping + OpenAI + ElevenLabs
+# 🎧 AI Product Audio Summarizer — Production-Grade Semantic Scraping + OpenAI + ElevenLabs
 
-A backend-focused GenAI pipeline that scrapes product-style websites, semantically extracts structured items using OpenAI, generates concise AI summaries, and converts each summary into high-quality speech using ElevenLabs.
+A backend-focused GenAI pipeline that scrapes **product-style websites**, **semantically extracts structured items using OpenAI**, **generates concise AI summaries**, and converts each **summary into high-quality speech using ElevenLabs**.
 
 Built as a site-agnostic, resilient AI ingestion system with:
 
@@ -16,83 +16,63 @@ End-to-end automation (Scrape → Summarize → Audio)
 
 Designed to demonstrate real-world GenAI backend engineering practices.
 
-🔥 Key Features
-✅ Semantic Website Scraping (LLM-powered)
+---
 
-Fetches raw readable content from any product-style website
+## 🔥 Key Features
 
-Avoids brittle CSS selectors entirely
+### ✅ Semantic Website Scraping (LLM-powered)
 
-Uses OpenAI to understand page content semantically
+ - Fetches raw readable content from any product-style website
+   -Avoids brittle CSS selectors entirely
+   -Uses OpenAI to understand page content semantically
+   -Works even if DOM structure changes
+   
+### ✅ Structured AI Extraction + Summarization
 
-Works even if DOM structure changes
+ - Each item is converted into:
+ - Title / identifier
+ - Short description
+ - AI-generated 1–2 sentence summary
+ - Implemented with:
+ - OpenAI json_schema
+ - strict: true enforcement
+ - Deterministic backend-friendly outputs
 
-✅ Structured AI Extraction + Summarization
-
-Each item is converted into:
-
-Title / identifier
-
-Short description
-
-AI-generated 1–2 sentence summary
-
-Implemented with:
-
-OpenAI json_schema
-
-strict: true enforcement
-
-Deterministic backend-friendly outputs
-
-This removes the need for defensive parsing.
-
-✅ High-Quality Audio Generation (ElevenLabs)
-
-Each summary is converted into speech
-
-One .mp3 file per extracted item
-
-Automatic retries with exponential backoff
-
-Files persisted locally
-
-Result: 5 independent audio files per run
-
-✅ Production Reliability
-
-Environment validation before startup
-
-Retry handling for OpenAI + ElevenLabs
-
-Exponential backoff on 429 / transient failures
-
-Input sanitization to reduce tokens + hallucinations
-
-Modular services with single responsibility
-
-🌐 Target Website (Scraping Source)
-
-For evaluation, the pipeline was tested against:
-
-https://quotes.toscrape.com/
+***This removes the need for defensive parsing.***
 
 
-Although this is a demo site, it behaves like a product listing:
+### ✅ High-Quality Audio Generation (ElevenLabs)
 
-Repeated content blocks
+  - Each summary is converted into speech
+  - One .mp3 file per extracted item
+  - Automatic retries with exponential backoff
+  - Files persisted locally
+  - Result: 5 independent audio files per run
 
-Public HTML
+### ✅ Production Reliability
 
-Multiple items per page
+  - Environment validation before startup
+  - Retry handling for OpenAI + ElevenLabs
+  - Exponential backoff on 429 / transient failures
+  - Input sanitization to reduce tokens + hallucinations
+  - Modular services with single responsibility
 
-Each quote is treated as a “product item”.
+### 🌐 Target Website (Scraping Source)
 
-The architecture is site-agnostic — replacing this URL requires no scraper logic changes.
+  - For evaluation, the pipeline was tested against:
+  - https://quotes.toscrape.com/
+  - Although this is a demo site, it behaves like a product listing:
+  - Repeated content blocks
+  - Public HTML
+  - Multiple items per page
+  - Each quote is treated as a “product item”.
+
+**The architecture is site-agnostic — replacing this URL requires no scraper logic changes**.
 
 🏗 Architecture
 flowchart TD
 ```mermaid
+flowchart TD
     Start((Run Script))
     Start --> Env[Environment Validation]
 
@@ -108,21 +88,17 @@ flowchart TD
     Save --> End((Complete))
 ```
 
-Flow Summary
 
-Validate API keys
+### Flow Summary
 
-Scrape raw readable content
+  - Validate API keys
+  - Scrape raw readable content
+  - Send sanitized text to OpenAI
+  - Receive structured summaries (strict JSON)
+  - Persist JSON locally
+  - Convert summaries to speech via ElevenLabs
+  - Save .mp3 files to /output
 
-Send sanitized text to OpenAI
-
-Receive structured summaries (strict JSON)
-
-Persist JSON locally
-
-Convert summaries to speech via ElevenLabs
-
-Save .mp3 files to /output
 
 📁 Project Structure
 ```
@@ -142,13 +118,14 @@ Save .mp3 files to /output
 └── README.md
 ```
 
-Design principle:
+### Design principle:
 
 Each module owns exactly one responsibility.
 
 No monolithic scripts. Production-style separation.
 
 ⚙️ Setup Instructions
+
 1️⃣ Prerequisites
 
 Node.js v18+
@@ -158,7 +135,9 @@ OpenAI API Key
 ElevenLabs API Key
 
 2️⃣ Installation
+
 git clone <your-repo-link>
+
 cd <repo-folder>
 
 npm install axios cheerio openai elevenlabs dotenv
@@ -168,34 +147,31 @@ npm install axios cheerio openai elevenlabs dotenv
 Create .env in project root:
 
 OPENAI_API_KEY=your_openai_key_here
+
 ELEVENLABS_API_KEY=your_elevenlabs_key_here
 
 
 Startup will fail fast if keys are missing.
 
-🚀 Run the Pipeline
+### 🚀 Run the Pipeline
 node src/index.js
 
 
 This executes:
 
-Scraping
+- Scraping
+- Semantic extraction
+- Summarization
+- JSON persistence
+- Audio generation
 
-Semantic extraction
+### Outputs:
 
-Summarization
+- /data → structured extracted items
 
-JSON persistence
+- /output → 5 generated .mp3 files
 
-Audio generation
-
-Outputs:
-
-/data → structured extracted items
-
-/output → 5 generated .mp3 files
-
-🧪 Test Result
+### 🧪 Test Result
 
 Using https://quotes.toscrape.com/:
 
@@ -209,8 +185,8 @@ Using https://quotes.toscrape.com/:
 
 Full end-to-end automation completed successfully.
 
-🧠 Senior-Level Design Decisions
-🔹 Semantic Extraction over CSS Selectors
+### 🧠 Senior-Level Design Decisions
+### 🔹 Semantic Extraction over CSS Selectors
 
 Traditional scrapers break when HTML changes.
 
@@ -222,7 +198,7 @@ Lets OpenAI identify meaningful entities
 
 This mirrors modern AI ingestion pipelines used in production.
 
-🔹 Strict JSON Contracts
+### 🔹 Strict JSON Contracts
 
 OpenAI is configured with:
 
@@ -238,7 +214,7 @@ No malformed responses
 
 Clean downstream processing
 
-🔹 Resiliency Layer
+### 🔹 Resiliency Layer
 
 Both OpenAI and ElevenLabs calls include:
 
@@ -254,7 +230,7 @@ Temporary outages
 
 Network instability
 
-🔹 Token Optimization
+### 🔹 Token Optimization
 
 Before LLM calls:
 
@@ -270,19 +246,19 @@ Faster inference
 
 Improved comprehension
 
-🔹 Explicit Orchestration
+### 🔹 Explicit Orchestration
 
 index.js contains only flow control, not business logic.
 
 This mirrors microservice-style coordination patterns.
 
-📊 Alignment With Evaluation Criteria
-✅ Correctness & Execution Flow
+### 📊 Alignment With Evaluation Criteria
+## ✅ Correctness & Execution Flow
 
 Clear deterministic pipeline:
 Scrape → Extract → Summarize → Audio
 
-✅ Code Clarity & Structure
+## ✅ Code Clarity & Structure
 
 Service-based layout
 
@@ -290,7 +266,7 @@ Single-responsibility modules
 
 Clean orchestration
 
-✅ Practical Decision Making
+## ✅ Practical Decision Making
 
 Semantic scraping
 
@@ -300,7 +276,7 @@ Retry + backoff
 
 Input sanitization
 
-✅ Proper OpenAI + ElevenLabs Usage
+## ✅ Proper OpenAI + ElevenLabs Usage
 
 OpenAI for semantic extraction + summarization
 
@@ -308,7 +284,7 @@ ElevenLabs strictly for TTS
 
 Both wrapped with validation + retries
 
-✅ Documentation Quality
+## ✅ Documentation Quality
 
 Setup instructions
 
