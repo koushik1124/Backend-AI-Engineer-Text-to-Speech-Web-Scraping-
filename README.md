@@ -134,7 +134,7 @@ No monolithic scripts. Production-style separation.
 
 2️⃣ Installation
 
-  - git clone <your-repo-link>
+  git clone <your-repo-link>
   cd <repo-folder>
   npm install axios cheerio openai elevenlabs dotenv
 
@@ -184,9 +184,13 @@ Full end-to-end automation completed successfully.
 ### 🚀 Proof of Work
 
 🚀 Initializing Universal Backend AI Assessment Flow...
+
 🔍 Step 1: Fetching raw content from https://books.toscrape.com/...
+
 🤖 Step 2 & 3: AI is extracting and summarizing 5 products...
+
 💾 Step 4: Saving structured data to local storage...
+
 🎙️   Step 5: Converting summaries to audio...
    - Processing audio for: A Light in the Attic
    - Processing audio for: Tipping the Velvet
@@ -195,11 +199,6 @@ Full end-to-end automation completed successfully.
    - Processing audio for: Sapiens: A Brief History of Humankind
 
 ✅ Assessment Complete! 5 audio files generated in /output.
-
-Product Name,AI-Generated Summary (1-2 Sentences),Audio Output
-A Light in the Attic,A classic collection of humorous and profound poems accompanied by whimsical illustrations.,a_light_in_the_attic.mp3
-Tipping the Velvet,An evocative historical novel exploring identity and romance in Victorian London's music halls.,tipping_the_velvet.mp3
-...,...,...
 
 **Audit Note**: The data/products.json file and .mp3 files in /output are excluded from version control to maintain repository cleanliness. To reproduce these results, please follow the Setup instructions.
 
