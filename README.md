@@ -185,15 +185,15 @@ Full end-to-end automation completed successfully.
 
 ### 🚀 Proof of Work
 
-🚀 Initializing Universal Backend AI Assessment Flow...
+## 🚀 Initializing Universal Backend AI Assessment Flow
 
-🔍 Step 1: Fetching raw content from https://books.toscrape.com/...
+**🔍 Step 1**: Fetching raw content from https://books.toscrape.com/
 
-🤖 Step 2 & 3: AI is extracting and summarizing 5 products...
+**🤖 Step 2 & 3**: AI is extracting and summarizing 5 products
 
-💾 Step 4: Saving structured data to local storage...
+**💾 Step 4**: Saving structured data to local storage
 
-🎙️   Step 5: Converting summaries to audio...
+**🎙️   Step 5**: Converting summaries to audio...
    - Processing audio for: A Light in the Attic
    - Processing audio for: Tipping the Velvet
    - Processing audio for: Soumission
@@ -209,7 +209,7 @@ Full end-to-end automation completed successfully.
 
  - Traditional scrapers break when HTML changes.
 
- - This system:
+**This system**:
 
  - Extracts readable text
 
