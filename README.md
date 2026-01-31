@@ -1,4 +1,4 @@
-# 🎧 AI Product Audio Summarizer — Production-Grade Semantic Scraping + OpenAI + ElevenLabs
+# 🎧 AI Product Audio Summarizer -  Production-Grade Semantic Scraping + OpenAI + ElevenLabs
 
 A backend-focused GenAI pipeline that scrapes **product-style websites**, **semantically extracts structured items using OpenAI**, **generates concise AI summaries**, and converts each **summary into high-quality speech using ElevenLabs**.
 
@@ -128,19 +128,15 @@ No monolithic scripts. Production-style separation.
 
 1️⃣ Prerequisites
 
-Node.js v18+
-
-OpenAI API Key
-
-ElevenLabs API Key
+  - Node.js v18+
+  - OpenAI API Key
+  - ElevenLabs API Key
 
 2️⃣ Installation
 
-git clone <your-repo-link>
-
-cd <repo-folder>
-
-npm install axios cheerio openai elevenlabs dotenv
+  - git clone <your-repo-link>
+  cd <repo-folder>
+  npm install axios cheerio openai elevenlabs dotenv
 
 3️⃣ Configure Environment
 
@@ -185,6 +181,28 @@ Using https://quotes.toscrape.com/:
 
 Full end-to-end automation completed successfully.
 
+### 🚀 Proof of Work
+
+🚀 Initializing Universal Backend AI Assessment Flow...
+🔍 Step 1: Fetching raw content from https://books.toscrape.com/...
+🤖 Step 2 & 3: AI is extracting and summarizing 5 products...
+💾 Step 4: Saving structured data to local storage...
+🎙️   Step 5: Converting summaries to audio...
+   - Processing audio for: A Light in the Attic
+   - Processing audio for: Tipping the Velvet
+   - Processing audio for: Soumission
+   - Processing audio for: Sharp Objects
+   - Processing audio for: Sapiens: A Brief History of Humankind
+
+✅ Assessment Complete! 5 audio files generated in /output.
+
+Product Name,AI-Generated Summary (1-2 Sentences),Audio Output
+A Light in the Attic,A classic collection of humorous and profound poems accompanied by whimsical illustrations.,a_light_in_the_attic.mp3
+Tipping the Velvet,An evocative historical novel exploring identity and romance in Victorian London's music halls.,tipping_the_velvet.mp3
+...,...,...
+
+**Audit Note**: The data/products.json file and .mp3 files in /output are excluded from version control to maintain repository cleanliness. To reproduce these results, please follow the Setup instructions.
+
 ### 🧠 Senior-Level Design Decisions
 ### 🔹 Semantic Extraction over CSS Selectors
 
@@ -200,57 +218,57 @@ This mirrors modern AI ingestion pipelines used in production.
 
 ### 🔹 Strict JSON Contracts
 
-OpenAI is configured with:
+**OpenAI is configured with**:
 
-json_schema
+ - json_schema
 
-strict: true
+ - strict: true
 
-Guarantees:
+**Guarantees**:
 
-Always valid structure
+ - Always valid structure
 
-No malformed responses
+ - No malformed responses
 
-Clean downstream processing
+ - Clean downstream processing
 
 ### 🔹 Resiliency Layer
 
-Both OpenAI and ElevenLabs calls include:
+ - Both OpenAI and ElevenLabs calls include:
 
-Retry logic
+ - Retry logic
 
-Exponential backoff
+ - Exponential backoff
 
-Protects against:
+ - Protects against:
 
-Rate limits
+ - Rate limits
 
-Temporary outages
+ - Temporary outages
 
-Network instability
+ - Network instability
 
 ### 🔹 Token Optimization
 
-Before LLM calls:
+ - Before LLM calls:
 
-HTML tags stripped
+ - HTML tags stripped
 
-Only meaningful text retained
+ - Only meaningful text retained
 
-Benefits:
+**Benefits**:
 
-Lower cost
+ - Lower cost
 
-Faster inference
+ - Faster inference
 
-Improved comprehension
+ - Improved comprehension
 
 ### 🔹 Explicit Orchestration
 
-index.js contains only flow control, not business logic.
+ - index.js contains only flow control, not business logic.
 
-This mirrors microservice-style coordination patterns.
+ - This mirrors microservice-style coordination patterns.
 
 ### 📊 Alignment With Evaluation Criteria
 ## ✅ Correctness & Execution Flow
@@ -260,52 +278,36 @@ Scrape → Extract → Summarize → Audio
 
 ## ✅ Code Clarity & Structure
 
-Service-based layout
-
-Single-responsibility modules
-
-Clean orchestration
+ - Service-based layout
+ - Single-responsibility modules
+ - Clean orchestration
 
 ## ✅ Practical Decision Making
 
-Semantic scraping
-
-Strict structured outputs
-
-Retry + backoff
-
-Input sanitization
+  - Semantic scraping
+  - Strict structured outputs
+  - Retry + backoff
+  - Input sanitization
 
 ## ✅ Proper OpenAI + ElevenLabs Usage
 
-OpenAI for semantic extraction + summarization
-
-ElevenLabs strictly for TTS
-
-Both wrapped with validation + retries
+  - OpenAI for semantic extraction + summarization
+  - ElevenLabs strictly for TTS
+  - Both wrapped with validation + retries
 
 ## ✅ Documentation Quality
 
-Setup instructions
+  - Setup instructions
+  - Architecture
+  - Design rationale
+  - Test results
+  - Engineering decisions
 
-Architecture
+##📌 Future Improvements
 
-Design rationale
-
-Test results
-
-Engineering decisions
-
-📌 Future Improvements
-
-Parallel scraping of multiple URLs
-
-Batch audio generation
-
-Streaming TTS
-
-Cloud deployment (Render / EC2)
-
-Audio metadata tagging
-
-Queue-based processing (BullMQ / Redis)
+  - Parallel scraping of multiple URLs
+  - Batch audio generation
+  - Streaming TTS
+  - Cloud deployment (Render / EC2)
+  - Audio metadata tagging
+  - Queue-based processing (BullMQ / Redis)
