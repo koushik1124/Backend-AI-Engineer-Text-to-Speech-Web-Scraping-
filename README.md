@@ -205,15 +205,15 @@ Full end-to-end automation completed successfully.
 ### 🧠 Senior-Level Design Decisions
 ### 🔹 Semantic Extraction over CSS Selectors
 
-Traditional scrapers break when HTML changes.
+ - Traditional scrapers break when HTML changes.
 
-This system:
+ - This system:
 
-Extracts readable text
+ - Extracts readable text
 
-Lets OpenAI identify meaningful entities
+ - Lets OpenAI identify meaningful entities
 
-This mirrors modern AI ingestion pipelines used in production.
+ - This mirrors modern AI ingestion pipelines used in production.
 
 ### 🔹 Strict JSON Contracts
 
