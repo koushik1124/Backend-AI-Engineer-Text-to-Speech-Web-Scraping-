@@ -302,7 +302,7 @@ Scrape → Extract → Summarize → Audio
   - Test results
   - Engineering decisions
 
-##📌 Future Improvements
+## 📌 Future Improvements
 
   - Parallel scraping of multiple URLs
   - Batch audio generation
