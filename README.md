@@ -124,7 +124,7 @@ Each module owns exactly one responsibility.
 
 No monolithic scripts. Production-style separation.
 
-⚙️ Setup Instructions
+## ⚙️ Setup Instructions
 
 1️⃣ Prerequisites
 
@@ -137,6 +137,8 @@ No monolithic scripts. Production-style separation.
   git clone <your-repo-link>
   cd <repo-folder>
   npm install axios cheerio openai elevenlabs dotenv
+
+  **Note**: "Ensure you have Node.js v18+ installed." This prevents any environment-related confusion".
 
 3️⃣ Configure Environment
 
@@ -202,7 +204,7 @@ Full end-to-end automation completed successfully.
 
 **Audit Note**: The data/products.json file and .mp3 files in /output are excluded from version control to maintain repository cleanliness. To reproduce these results, please follow the Setup instructions.
 
-### 🧠 Senior-Level Design Decisions
+### 🧠 Senior - Level Design Decisions
 ### 🔹 Semantic Extraction over CSS Selectors
 
  - Traditional scrapers break when HTML changes.
